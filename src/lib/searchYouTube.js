@@ -1,3 +1,5 @@
+import YOUTUBE_API_KEY from '../config/youtube.config.js';
+
 var searchYouTube = (options, callback) => {
   $.ajax({
     // This is the url you should use to communicate with the parse API server.
@@ -7,7 +9,7 @@ var searchYouTube = (options, callback) => {
       part: 'snippet', 
       type: 'video', 
       videoEmbeddable: 'true',
-      q: options.query || 'marmoset',
+      q: options.query || 'french bulldogs',
       key: options.key || YOUTUBE_API_KEY,
       maxResults: options.max || 5
     },
@@ -22,4 +24,4 @@ var searchYouTube = (options, callback) => {
 };
 
 export default searchYouTube;
-window.searchYouTube = searchYouTube;
+
